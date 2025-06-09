@@ -1,0 +1,33 @@
+﻿@model IEnumerable<u24725014_Prac_08.Models.Polygon>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="bg-secondary p-4">Shapes Display</h2>
+<div style="text-align:end;">
+    <a class="btn btn-primary" href="/Home/AddShape">Add Shape</a>
+
+</div>
+
+
+
+@foreach (var item in Model)
+{
+    <div>
+
+        <p>
+            @Html.DisplayFor(modelItem => item.Description)
+        </p>
+
+        <p>
+            Area: @item.getArea()
+        </p>
+
+        <svg style="border: dotted 2px black" width="450" height="450" xmlns="http://www.w3.org/2000/svg">
+            @Html.Raw(item.getSVG())
+        </svg>
+
+
+    </div>
+}

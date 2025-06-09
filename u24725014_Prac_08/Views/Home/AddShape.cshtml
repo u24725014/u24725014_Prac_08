@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "AddShape";
+}
+
+<h2>Choose a shape to display</h2>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="shape" id="square" value="square" checked>
+    <label class="form-check-label" for="circle">
+        Square
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="shape" id="rectangle" value="rectangle">
+    <label class="form-check-label" for="rectangle">
+        Rectangle
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="shape" id="ellipse" value="ellipse">
+    <label class="form-check-label" for="ellipse">
+        Ellipse
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="shape" id="triangle" value="triangle">
+    <label class="form-check-label" for="triangle">
+        Triangle
+    </label>
+</div>
+<button onclick="submit()">Submit</button>
+
+@section Scripts{
+    <script>
+    function submit() {
+        const selected = document.querySelector('input[name="shape"]:checked');
+
+
+            window.location = `/home/${selected.value}`;
+
+    }
+    </script>
+}
+
